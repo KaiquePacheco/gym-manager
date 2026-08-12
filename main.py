@@ -1,10 +1,11 @@
 from flask import Flask
 
-host = "0.0.0.0"
-port = 5500
-debug=True
-
 app = Flask(__name__)
+
+app.config.from_pyfile("config.py")
+host = app.config["APP_HOST"]
+port = app.config["APP_PORT"]
+debug = app.config["APP_DEBUG"]
 
 @app.route("/", methods=["GET"])
 def index():
