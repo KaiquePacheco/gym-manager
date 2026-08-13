@@ -1,5 +1,6 @@
 from main import app
+from flask import render_template
 
-@app.route("/", methods=["GET"])
+@app.route("/cadastro")
 def index():
-    return "Hello world!"
+    return render_template("cadastro.html")
