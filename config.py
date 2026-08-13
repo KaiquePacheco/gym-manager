@@ -1,3 +1,8 @@
-APP_HOST = "0.0.0.0"
-APP_PORT = 5500
-APP_DEBUG = True
+from dotenv import load_dotenv
+from os import getenv
+
+load_dotenv(".env")
+
+APP_HOST = getenv("APP_HOST")
+APP_PORT = int(getenv("APP_PORT"))
+APP_DEBUG = bool(getenv("APP_DEBUG"))
