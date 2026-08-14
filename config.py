@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 from os import getenv
 
-load_dotenv(".env")
+load_dotenv(".env", override=True)
 
 APP_HOST = getenv("APP_HOST")
 APP_PORT = int(getenv("APP_PORT"))
