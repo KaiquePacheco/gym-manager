@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from models import Base
+from flask_bcrypt import Bcrypt
 
 app = Flask(__name__)
 
@@ -11,6 +12,8 @@ debug = app.config["APP_DEBUG"]
 
 db = SQLAlchemy(model_class=Base)
 db.init_app(app)
+
+bcrypt = Bcrypt(app)
 
 from rotas import *
 
