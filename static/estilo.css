@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+    font-family: "Inter", sans-serif;
+    color: var(--branco-secundario);
+
+    --preto-primario: #524646;
+    --branco-secundario: #FCF2E5;
+    --vermelho-terciario: #EC5B38;
+    --cinza-quaternario: #A8A492;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+
+    margin: 0;
+
+    background-image: url("./imagens/Plano de fundo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulo {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.subtitulo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.sublinhado {
+    text-decoration: underline;
+}
+
+main {
+    width: 92.23%;
+
+    padding: 10px;
+
+    background-color: var(--preto-primario);
+
+    border-radius: 6px;
+    box-shadow: 0px 4px 4px black;
+}
+
+.formulario {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.formulario > fieldset {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    border: 0;
+
+    padding: 0;
+}
+
+.container-botoes {
+    padding: 10px 0px;
+
+    display: flex;
+    gap: 10px;
+}
+
+.botao {
+    color: var(--branco-secundario);
+    
+    font-size: 1.5rem;
+
+    text-align: center;
+
+    background-color: var(--vermelho-terciario);
+    
+    border: 0;
+    border-radius: 6px;
+
+    padding: 10px;
+
+    box-shadow: 0px 2px 4px black;
+
+    text-decoration: none;
+}
+
+.largura-total {
+    width: 100%;
+}
+
+.campo {
+    height: 25px;
+
+    background-color: var(--branco-secundario);
+    
+    border: 0;
+    border-radius: 6px;
+
+    color: var(--preto-primario);
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    padding: 5px;
+}
+
+.campo::placeholder {
+    color: var(--cinza-quaternario);
+    opacity: 1;
+
+    font-size: 1.5rem;
+    font-weight: bold;
+}

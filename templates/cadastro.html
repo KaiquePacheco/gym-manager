@@ -4,25 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css') }}">
 </head>
 <body>
     <main>
-        <form>
+        <form class="formulario">
+            <h1 class="titulo sublinhado">Cadastro</h1>
+
             <fieldset>
-                <h1>Cadastro</h1>
-            
-                <label for="email">Email:</label>
-                <input type="email" name="email">
+                <label for="email" class="subtitulo">Email:</label>
+                <input type="email" name="email" class="campo" placeholder="_________">
 
-                <label for="senha">Senha:</label>
-                <input type="password" name="senha">
+                <label for="senha" class="subtitulo">Senha:</label>
+                <input type="password" name="senha" class="campo" placeholder="_________">
 
-                <label for="confirmar_senha">Confirmar senha:</label>
-                <input type="password" name="confirmar_senha">
+                <label for="confirmar_senha" class="subtitulo">Confirmar senha:</label>
+                <input type="password" name="confirmar_senha" class="campo" placeholder="_________">
 
-                <div>
-                    <input type="submit" value="Confirmar">
-                    <a href="#">Voltar</a>
+                <div class="container-botoes largura-total">
+                    <input type="submit" value="Confirmar" class="botao largura-total">
+                    <a href="#" class="botao largura-total">Voltar</a>
                 </div>
             </fieldset>
         </form>
