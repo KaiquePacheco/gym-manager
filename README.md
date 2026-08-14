@@ -11,9 +11,10 @@ Os pacotes instalados são:
 - Flask SQLAlchemy 3.1.1
 - Alembic 1.19.1
 - Mysql Connector Python 26.7.0
+- Flask Bcrypt 1.0.1
 Para instalar esses pacotes rode o comando abaixo:
 ```sh
-pip install flask==3.1.3 sqlalchemy==2.0.52 flask-sqlalchemy==3.1.1 alembic==1.19.1 mysql-connector-python==26.7.0
+pip install flask==3.1.3 sqlalchemy==2.0.52 flask-sqlalchemy==3.1.1 alembic==1.19.1 mysql-connector-python==26.7.0 flask-bcrypt==1.0.1
 ```
 
 O banco de dados principal usado é o mysql 8.4.9, porém, devido ao sqlalchemy, qualquer banco de dados pode ser usado.
