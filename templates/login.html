@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css') }}">
+</head>
+<body>
+    <main>
+        <form class="formulario">
+            <h1 class="titulo sublinhado">Login</h1>
+
+            <fieldset>
+                <label for="email" class="subtitulo">Email:</label>
+                <input type="email" name="email" class="campo" placeholder="_________">
+
+                <label for="senha" class="subtitulo">Senha:</label>
+                <input type="password" name="senha" class="campo" placeholder="_________">
+
+                <div class="container-botoes largura-total">
+                    <input type="submit" value="Confirmar" class="botao largura-total">
+                    <a href="{{ url_for('cadastro') }}" class="botao largura-total">Cadastro</a>
+                </div>
+            </fieldset>
+        </form>
+    </main>
+</body>
+</html>

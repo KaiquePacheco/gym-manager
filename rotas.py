@@ -11,3 +11,7 @@ def cadastrar():
     if contas.cadastrar(request.form["email"], request.form["senha"]):
         return redirect("/")
     return redirect("/cadastro")
+
+@app.route("/login")
+def login():
+    return render_template("login.html")
