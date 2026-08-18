@@ -1,5 +1,5 @@
 from main import app
-from flask import render_template, request, redirect
+from flask import render_template, request, redirect, session
 import controllers.contas as contas
 
 @app.route("/cadastro")
@@ -15,3 +15,13 @@ def cadastrar():
 @app.route("/login")
 def login():
     return render_template("login.html")
+
+@app.route("/autenticar", methods=["POST"])
+def autenticar():
+    usuario = contas.login(request.form["email"], request.form["senha"])
+
+    if usuario != None:
+        session["usuario_id"] = usuario.id
+        return redirect("/")
+
+    return redirect("/login")

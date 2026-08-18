@@ -15,6 +15,8 @@ db.init_app(app)
 
 bcrypt = Bcrypt(app)
 
+app.secret_key = app.config["SECRET_KEY"]
+
 from rotas import *
 
 if __name__ == "__main__":

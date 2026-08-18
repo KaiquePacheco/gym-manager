@@ -13,3 +13,11 @@ def cadastrar(email, senha):
         print(f"Erro ao cadastrar usuário: {e}")
         db.session.rollback()
         return False
+
+def login(email, senha):
+    usuario = Usuario.query.filter_by(email=email).first()
+
+    if usuario and bcrypt.check_password_hash(usuario.senha, senha):
+        return usuario
+
+    return None
