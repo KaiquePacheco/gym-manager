@@ -8,11 +8,11 @@ def cadastrar(email, senha):
     try:
         db.session.add(usuario)
         db.session.commit()
-        return True
+        return usuario
     except Exception as e:
         print(f"Erro ao cadastrar usuário: {e}")
         db.session.rollback()
-        return False
+        return None
 
 def login(email, senha):
     usuario = Usuario.query.filter_by(email=email).first()

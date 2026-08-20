@@ -8,7 +8,10 @@ def cadastro():
 
 @app.route("/cadastrar", methods=["POST"])
 def cadastrar():
-    if contas.cadastrar(request.form["email"], request.form["senha"]):
+    usuario = contas.cadastrar(request.form["email"], request.form["senha"])
+
+    if usuario:
+        session["usuario_id"] = usuario.id
         return redirect("/")
     return redirect("/cadastro")
 
