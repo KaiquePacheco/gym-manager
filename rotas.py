@@ -8,6 +8,9 @@ def cadastro():
 
 @app.route("/cadastrar", methods=["POST"])
 def cadastrar():
+    if request.form["senha"] != request.form["confirmar_senha"]:
+        return redirect("/cadastro")
+
     usuario = contas.cadastrar(request.form["email"], request.form["senha"])
 
     if usuario:
