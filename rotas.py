@@ -1,5 +1,5 @@
 from main import app
-from flask import render_template, request, redirect, session
+from flask import render_template, request, redirect, session, url_for
 import controllers.contas as contas
 
 @app.route("/cadastro")
@@ -9,14 +9,14 @@ def cadastro():
 @app.route("/cadastrar", methods=["POST"])
 def cadastrar():
     if request.form["senha"] != request.form["confirmar_senha"]:
-        return redirect("/cadastro")
+        return redirect(url_for("cadastro"))
 
     usuario = contas.cadastrar(request.form["email"], request.form["senha"])
 
     if usuario:
         session["usuario_id"] = usuario.id
-        return redirect("/")
-    return redirect("/cadastro")
+        return redirect(url_for("index"))
+    return redirect(url_for("cadastro"))
 
 @app.route("/login")
 def login():
@@ -28,6 +28,12 @@ def autenticar():
 
     if usuario != None:
         session["usuario_id"] = usuario.id
-        return redirect("/")
+        return redirect(url_for("index"))
 
-    return redirect("/login")
+    return redirect(url_for("login"))
+
+@app.route("/")
+def index():
+    if session["usuario_id"] == None or not session["usuario_id"]:
+        return redirect(url_for("login"))
+    return render_template("index.html")
